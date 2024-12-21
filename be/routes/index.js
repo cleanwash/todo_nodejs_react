@@ -1,21 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
-router.post('/tasks',(req, res) => {
- res.send('create task');
-});
-
-router.get('/tasks',(req, res) => {
-  res.send('get tasks');
-});
-
-router.put('/tasks/:id',(req, res) => {
-  res.send('update task');
-});
-
-router.delete('/tasks/:id',(req, res) => {
-  res.send('delete task');
-});
+const taskApi = require('./task.api');
+router.use('/tasks',taskApi); //'tasks' 주소가 불리면, taskApi를 사용
 
 module.exports = router;
-
