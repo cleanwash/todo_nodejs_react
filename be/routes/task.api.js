@@ -8,9 +8,7 @@ router.get('/',taskController.getTasks);
 
 router.put('/:id',taskController.updateTask);
 
-router.delete('/:id',(req, res) => {
-  res.send('delete task');
-});
+router.delete('/:id',taskController.deleteTask);
 
 module.exports = router;
 
